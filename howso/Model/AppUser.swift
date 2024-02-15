@@ -13,6 +13,7 @@ struct User: Identifiable, Codable, Hashable {
     @DocumentID var id: String?
     var phone_number: String
     //var dateCreated = Date()
+    var votes: [String: String]?
     var username: String
     var postCount: Int = 0
     var followerCount: Int = 0
@@ -25,8 +26,9 @@ struct User: Identifiable, Codable, Hashable {
     enum CodingKeys: String, CodingKey {
         case id
         case phone_number
-        case postCount
+        case votes
         case username
+        case postCount
         case followerCount
         case followingCount
         //case profile_pic
